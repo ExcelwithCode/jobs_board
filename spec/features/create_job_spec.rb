@@ -13,10 +13,10 @@ feature "create a new job listing" do
   scenario "user completes job form" do
     visit new_job_path
     
-    fill_in("Job title", with: "Rails Programmer" )
-    fill_in("Category", with: "Engineering")
-    fill_in("Headquarter", with: "Denver, CO")
-    fill_in("Job description", with: "#{Faker::Lorem.sentence(200)}")
+    fill_in("What's the job title?", with: "Rails Programmer" )
+    fill_in("Choose the best category.", with: "Engineering")
+    fill_in("Where's your company's headquarters?", with: "Denver, CO")
+    fill_in("Describe the responsibilities and requirements for this job.", with: "#{Faker::Lorem.sentence(200)}")
     fill_in("How do people apply for this job?", with: "Shoot us an email with your salary requirements.")
     
     click_button("Continue to Step 2 to preview your ad")

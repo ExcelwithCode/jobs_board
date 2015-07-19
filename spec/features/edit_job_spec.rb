@@ -16,7 +16,7 @@ feature "make changes to job listings" do
   scenario "user edits a job" do
     visit edit_job_path(@job_3)
     
-    fill_in("Headquarters", with: "Detriot, MI")
+    fill_in("Where's your company's headquarters?", with: "Detriot, MI")
     click_button("Continue to Step 2 to preview your ad")
     
     expect(page).to have_text("Detriot, MI")
