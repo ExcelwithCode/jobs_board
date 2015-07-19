@@ -1,0 +1,14 @@
+<div class="row">
+<div class="large-6 columns large-offset-6 columns">
+<% if flash.any? %>
+  <div data-alert class="alert-box success radius">
+    <% user_facing_flashes.each do |key, value| -%>
+      <div class="flash-<%= key %>"><%= value %></div>
+    <% end -%>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+</div>
+</div>
+
+

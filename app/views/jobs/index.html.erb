@@ -1,0 +1,10 @@
+<%= render 'header_breaks' %>
+<div class="row">
+  <div class="large-10 columns large-offset-1 column">
+  <%= link_to("Post a job: $200 for 30 days", new_job_path, class: "button radius medium success right") %><br><br><br>
+    <% @jobs.each do |job| %>
+    <strong><%= link_to(job.title, job) %></strong><br><hr>
+  <% end %>
+  </div>
+</div>
+<%= render 'footer_breaks' %>
