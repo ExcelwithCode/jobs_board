@@ -4,9 +4,9 @@ require "rails_helper"
 feature "create a new job listing" do
   scenario "user visits job form" do
     visit root_path
-    click_link "Post a job: $200 for 30 days"
+    click_link "Post a job: $200 for 60 days"
     
-    expect(page).to have_text("STEP 1: CREATE YOUR AD")
+    expect(page).to have_text("STEP 1 (OF 3): CREATE YOUR AD")
     expect(page).to have_button("Continue to Step 2 to preview your ad")
   end
   
@@ -21,7 +21,7 @@ feature "create a new job listing" do
     
     click_button("Continue to Step 2 to preview your ad")
     
-    expect(page).to have_text("STEP 2: PREVIEW YOUR AD")
+    expect(page).to have_text("STEP 2 (OF 3): PREVIEW YOUR AD")
     expect(page).to have_button("Looks great! Continue to Step 3")
     expect(page).to have_link("Make changes")
   end

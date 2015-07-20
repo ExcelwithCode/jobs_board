@@ -1,7 +1,8 @@
 <%= render 'header_breaks' %>
 <div class="row">
   <div class="large-10 columns large-offset-1 column">
-  <%= link_to("Post a job: $200 for 30 days", new_job_path, class: "button radius medium success right") %><br><br><br>
+  <p style="font-size: 19px;" class="text-left">Find people who care about communication, documentation and their users to <strong style="font-weight: bold;"><u>Work the Docs.</u></strong> This can be developers, customer success pros, technical writers and marketers, or anyone who creates great experiences with software for people. Follow us on Twitter <a href="https://twitter.com/workthedocs" target="_blank">@workthedocs</a></p>
+  <%= link_to("Post a job: $200 for 60 days", new_job_path, class: "button radius medium success right") %><br><br><br>
     <% @jobs.each do |job| %>
     <strong><%= link_to(job.title, job) %></strong><br><hr>
   <% end %>

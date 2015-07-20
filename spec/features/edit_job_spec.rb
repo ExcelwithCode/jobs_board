@@ -9,7 +9,7 @@ feature "make changes to job listings" do
   scenario "user visits job edit form" do
     visit edit_job_path(@job_3)
     
-    expect(page).to have_content("STEP 1: CREATE YOUR AD")
+    expect(page).to have_content("STEP 1 (OF 3): CREATE YOUR AD")
     expect(page).to have_button("Continue to Step 2 to preview your ad")
   end
   
