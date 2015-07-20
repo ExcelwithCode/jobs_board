@@ -6,7 +6,7 @@
   <p><%= @job.location %></p>
   <p><%= @job.description.html_safe %></p>
   <p><%= @job.to_apply %></p>
-<button class="button radius medium success">Looks great! Continue to Step 3</button>
+<%= link_to "Looks great! Continue to Step 3", buy_ad_path(@job.permalink), class: "button radius medium success" %>
     or <u><%= link_to "Make changes", edit_job_path(@job) %></u>
 </div>
 </div>

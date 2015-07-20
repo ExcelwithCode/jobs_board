@@ -1,0 +1,31 @@
+<%= render 'header_breaks' %>
+<div class="row">
+<center><strong style="font-weight: bold; font-size:20px;"><u>STEP 3 (OF 3): ENTER YOUR PAYMENT INFORMATION</u></strong></center>
+<br>
+<br>
+<div class="large-6 columns large-offset-3 columns">
+<%= simple_form_for @job,
+    html: {
+      class: 'payola-payment-form',
+      'data-payola-base-path' => main_app.payola_path,
+      'data-payola-product' => @job.product_class,
+      'data-payola-permalink' => @job.permalink
+    } do |f| %>
+ 
+  <center><p style="color:red"><span class="payola-payment-error"></span></p></center>
+  <p>Your email address
+  <input type="email" name="stripeEmail"
+    data-payola="email"></input></p>
+  <p>Debit or credit card number
+  <input type="text" data-stripe="number"></input></p>
+  <p>Card expiration month
+  <input type="text" data-stripe="exp_month"></input></p>
+  <p>Card expiration year
+  <input type="text" data-stripe="exp_year"></input></p>
+  <p>CVC
+  <input type="text" data-stripe="cvc"></input></p>
+  <center><p><input type="submit" class="button radius medium success" value="Pay $200 to display your job ad for 60 days."></input></p></center>
+<% end %>
+</div>
+</div>
+<%= render 'footer_breaks' %>

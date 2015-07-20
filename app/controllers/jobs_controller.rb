@@ -39,6 +39,10 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
   
+  def payment
+    @job = Job.find_by_permalink(params[:permalink])
+  end
+  
   private
   
   def job_params

@@ -22,7 +22,7 @@ feature "create a new job listing" do
     click_button("Continue to Step 2 to preview your ad")
     
     expect(page).to have_text("STEP 2 (OF 3): PREVIEW YOUR AD")
-    expect(page).to have_button("Looks great! Continue to Step 3")
+    expect(page).to have_link("Looks great! Continue to Step 3")
     expect(page).to have_link("Make changes")
   end
 end
