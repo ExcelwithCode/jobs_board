@@ -3,7 +3,7 @@ require "rails_helper"
 
 feature "make changes to job listings" do
   before do
-    @job_3 = FactoryGirl.create(:job)
+    @job_3 = FactoryGirl.create(:job, location: "Detriot, MI")
   end
   
   scenario "user visits job edit form" do
@@ -16,7 +16,7 @@ feature "make changes to job listings" do
   scenario "user edits a job" do
     visit edit_job_path(@job_3)
     
-    fill_in("Where's your company's headquarters?", with: "Detriot, MI")
+    fill_in("Where's your company's headquarters?", with: @job_3.location)
     click_button("Continue to Step 2 to preview your ad")
     
     expect(page).to have_text("Detriot, MI")

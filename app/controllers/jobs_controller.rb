@@ -9,12 +9,16 @@ class JobsController < ApplicationController
   
   def edit
     @job = Job.find(params[:id])
+    redirect_to job_path(@job) if @job.paid?
   end
   
   def update
     @job = Job.find(params[:id])
-    if @job.update(job_params)
-      flash[:notice] = "Your job ad has been updated. Please continue to Step 3."
+    if !(@job.paid?)
+      @job.update_attributes(stripeEmail: params[:stripeEmail],
+                        payola_sale_guid: params[:payola_sale_guid])
+      redirect_to job_path(@job)
+    elsif @job.update(job_params)
       redirect_to preview_job_path(@job)
     else
       render :edit
@@ -28,7 +32,6 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
-      flash[:notice] = "Your job ad has been created. Please continue to Step 3."
       redirect_to preview_job_path(@job)
     else
       render :new
@@ -37,10 +40,12 @@ class JobsController < ApplicationController
   
   def preview
     @job = Job.find(params[:id])
+    redirect_to job_path(@job) if @job.paid?
   end
   
   def payment
     @job = Job.find_by_permalink(params[:permalink])
+    redirect_to job_path(@job) if @job.paid?
   end
   
   private

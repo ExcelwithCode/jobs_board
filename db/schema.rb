@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720043035) do
+ActiveRecord::Schema.define(version: 20150721171426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,13 @@ ActiveRecord::Schema.define(version: 20150720043035) do
     t.string   "location"
     t.text     "description"
     t.text     "to_apply"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "name"
-    t.integer  "price",       default: 20000
+    t.integer  "price",            default: 20000
     t.string   "permalink"
+    t.string   "stripeEmail"
+    t.string   "payola_sale_guid"
   end
 
   create_table "payola_affiliates", force: :cascade do |t|

@@ -12,7 +12,7 @@
       'data-payola-permalink' => @job.permalink
     } do |f| %>
  
-  <center><p style="color:red"><span class="payola-payment-error"></span></p></center>
+  <center><p style="color:red;"><span class="payola-payment-error"></span></p></center>
   <p>Your email address
   <input type="email" name="stripeEmail"
     data-payola="email"></input></p>
@@ -24,7 +24,7 @@
   <input type="text" data-stripe="exp_year"></input></p>
   <p>CVC
   <input type="text" data-stripe="cvc"></input></p>
-  <center><p><input type="submit" class="button radius medium success" value="Pay $200 to display your job ad for 60 days."></input></p></center>
+  <center><p><%= f.submit "Pay $200 to display your job ad for 60 days.", class: "button radius medium success" %></p></center>
 <% end %>
 </div>
 </div>

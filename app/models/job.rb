@@ -8,13 +8,17 @@ class Job < ActiveRecord::Base
   
   before_validation :provide_name, :provide_permalink
   
+  def paid?
+    !((self.stripeEmail == nil) && (self.payola_sale_guid == nil))
+  end
+  
   private
   
   def provide_name
-    self.name = "#{self.title} at #{self.category}"
+    self.name = "workthedocs" if self.name == nil
   end
   
   def provide_permalink
-    self.permalink = "#{title} #{ SecureRandom.hex }".parameterize
+    self.permalink = "#{ self.name } #{ SecureRandom.hex }".parameterize if self.permalink == nil
   end
 end
