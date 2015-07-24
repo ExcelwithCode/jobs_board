@@ -1,13 +1,17 @@
-<%= render 'header_breaks' %>
+<%= render 'four_breaks' %>
 <div class="row">
-<div class="large-8 columns large-offset-2 columns">
-<strong style="font-weight: bold; font-size:20px;"><u>STEP 2 (OF 3): PREVIEW YOUR AD</u></strong>
-  <p><%= @job.title %></p>
-  <p><%= @job.location %></p>
-  <p><%= @job.description.html_safe %></p>
-  <p><%= @job.to_apply %></p>
+<div class="large-10 columns large-offset-1 column">
+  <strong style="font-weight: bold; font-size:20px;"><u>STEP 2 (OF 3): PREVIEW YOUR AD</u></strong>
+  <%= render 'two_breaks' %>
+</div>
+</div>
+
+<%= render 'display_listing' %>
+
+<div class="row">
+<div class="large-10 columns large-offset-1 column">
 <%= link_to "Looks great! Continue to Step 3", buy_ad_path(@job.permalink), class: "button radius medium success" %>
     or <u><%= link_to "Make changes", edit_job_path(@job) %></u>
 </div>
 </div>
-<%= render 'footer_breaks' %>
+<%= render 'two_breaks' %>

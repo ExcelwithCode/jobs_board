@@ -1,15 +1,9 @@
 <%= content_for(:title, "#{ @job.title } in #{ @job.location }") %>
+<%= render 'four_breaks' %>
 <div class="row">
-<div class="large-8 columns">
-<p><%= link_to("Back to all jobs", jobs_path) %></p>
-<br>
-  <p><%= @job.title %></p>
-  <p><%= @job.location %></p>
-  <p><%= @job.description.html_safe %></p>
-  <p><%= @job.to_apply %></p>
-</div>
-<div class="large-3 columns large-offset-1 column">
-  <p>Tell a friend</p>
-  <p>Tweet about this job</p>
+<div class="large-10 columns large-offset-1 column">
+  <p><%= link_to("Back to all jobs", jobs_path) %></p>
+  <br>
 </div>
 </div>
+<%= render 'display_listing' %>

@@ -9,16 +9,15 @@ class JobsController < ApplicationController
   
   def edit
     @job = Job.find(params[:id])
-    redirect_to job_path(@job) if @job.paid?
+    redirect_to @job if @job.paid?
   end
   
   def update
     @job = Job.find(params[:id])
     if !(@job.paid?)
       @job.update_attributes(stripeEmail: params[:stripeEmail],
-                        payola_sale_guid: params[:payola_sale_guid])
-      redirect_to job_path(@job)
-    elsif @job.update(job_params)
+                      payola_sale_guid: params[:payola_sale_guid])
+      @job.update(job_params) unless @job.paid?
       redirect_to preview_job_path(@job)
     else
       render :edit
@@ -40,7 +39,7 @@ class JobsController < ApplicationController
   
   def preview
     @job = Job.find(params[:id])
-    redirect_to job_path(@job) if @job.paid?
+    redirect_to @job if @job.paid?
   end
   
   def payment

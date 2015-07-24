@@ -1,9 +1,10 @@
-<%= render 'header_breaks' %>
+<%= render 'four_breaks' %>
 <div class="row">
 <center><strong style="font-weight: bold; font-size:20px;"><u>STEP 3 (OF 3): ENTER YOUR PAYMENT INFORMATION</u></strong></center>
 <br>
 <br>
-<div class="large-6 columns large-offset-3 columns">
+<div class="large-4 large-offset-4 columns">
+
 <%= simple_form_for @job,
     html: {
       class: 'payola-payment-form',
@@ -12,20 +13,44 @@
       'data-payola-permalink' => @job.permalink
     } do |f| %>
  
-  <center><p style="color:red;"><span class="payola-payment-error"></span></p></center>
-  <p>Your email address
-  <input type="email" name="stripeEmail"
-    data-payola="email"></input></p>
-  <p>Debit or credit card number
-  <input type="text" data-stripe="number"></input></p>
-  <p>Card expiration month
-  <input type="text" data-stripe="exp_month"></input></p>
-  <p>Card expiration year
-  <input type="text" data-stripe="exp_year"></input></p>
-  <p>CVC
-  <input type="text" data-stripe="cvc"></input></p>
-  <center><p><%= f.submit "Pay $200 to display your job ad for 60 days.", class: "button radius medium success" %></p></center>
+  <center><p style="color:red"><span class="payola-payment-error"></span></p></center>
+  
+  <div class="row">
+  <div class="large-12 columns">
+    <label>Your email address
+      <input type="email" name="stripeEmail" data-payola="email" ></input>
+    </label>
+  </div>
+  
+  <div class="large-12 columns">
+  <label>Card number
+    <input type="text" data-stripe="number"></input>
+  </label>
+  </div>
+  
+   <div class="large-4 columns">
+    <label>Exp Month
+      <input type="text" data-stripe="exp_month"></input>
+    </label>
+  </div>
+  
+  <div class="large-4 columns">
+    <label>Exp Year
+      <input type="text" data-stripe="exp_year"></input>
+    </label>
+  </div>
+  
+  <div class="large-4 columns">
+    <p><label>CVC Code
+      <input type="text" data-stripe="cvc"></input>
+    </label></p>
+  </div>
+  
+  <div class="large-12 columns">
+  <%= f.submit "PAY AND DISPLAY AD NOW", class: "button radius medium expand success" %>
+  </div>
+</div>
 <% end %>
+<%= render 'two_breaks' %>
+  <center><%= link_to (image_tag("big.png")) %></center>
 </div>
-</div>
-<%= render 'footer_breaks' %>

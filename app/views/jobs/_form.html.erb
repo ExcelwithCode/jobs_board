@@ -1,16 +1,16 @@
-<%= render 'header_breaks' %>
+<%= render 'four_breaks' %>
 <div class="row">
 <div class="large-8 columns large-offset-2 columns">
-<p style="font-size: 19px;" class="text-left">Your job listing will remain on this site for 60 days and will be automatically emailed to 3,286 documentarians. We'll give you a full refund if you feel your ad was ineffective or repost your ad again, free for another 60 days.</p><br>
+<p style="font-size: 19px;" class="text-left">Your job listing will remain on this site for 60 days and will be automatically emailed to 3,286 technical job seekers. We'll give you a full refund if you feel your ad was ineffective or repost your ad again, free for another 60 days.</p><br>
 <strong style="font-weight: bold; font-size:20px;"><u>STEP 1 (OF 3): CREATE YOUR AD</u></strong>
 <%= simple_form_for(@job) do |f| %><br>
   <%= f.input :title, label: "What's the job title?", placeholder: "Freelance Technical Writer", autofocus: true %><br>
   <%= f.input :category, label: "Choose the best category." %><br>
   <%= f.input :location, label: "Where's your company's headquarters?", placeholder: "New York, NY or Boston, MA" %><br>
   <%= f.input :description, label: "Describe the responsibilities and requirements for this job.", input_html: { class: "redactor" } %><br>
-  <%= f.input :to_apply, label: "How do people apply for this job?", placeholder: "Example: Send a resume to jobs@company.com", input_html: { rows: 5 } %><br>
+  <%= f.input :to_apply, label: "How do people apply for this job?", placeholder: "Example: Send a resume and cover letter to jobs@company.com. You can use html link, bold, and italics tags.", input_html: { rows: 5 } %><br>
   <%= f.button :submit, "Continue to Step 2 to preview your ad", class: "button radius medium success left" %>
 <% end %>
 </div>
 </div>
-<%= render 'footer_breaks' %>
+<%= render 'two_breaks' %>

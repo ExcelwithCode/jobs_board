@@ -9,7 +9,7 @@ class Job < ActiveRecord::Base
   before_validation :provide_name, :provide_permalink
   
   def paid?
-    !((self.stripeEmail == nil) && (self.payola_sale_guid == nil))
+    (!(self.stripeEmail == nil) && !(self.payola_sale_guid == nil))
   end
   
   private
