@@ -8,21 +8,21 @@ describe Job, "create factory" do
 end
 
 describe Job, '.description' do
-  it { should validate_presence_of(:description) }
-  it { should validate_length_of(:description).is_at_least(500) }
+  it { is_expected.to validate_presence_of(:description) }
+  it { is_expected.to validate_length_of(:description).is_at_least(500) }
 end
 
 describe Job, '.title' do
-  it { should validate_presence_of(:title) }
-  it { should validate_length_of(:title).is_at_most(75) }
+  it { is_expected.to validate_presence_of(:title) }
+  it { is_expected.to validate_length_of(:title).is_at_most(75) }
 end
 
 describe Job, '.to_apply' do
-  it { should validate_presence_of(:to_apply) }
-  it { should validate_length_of(:to_apply).is_at_most(500) }
+  it { is_expected.to validate_presence_of(:to_apply) }
+  it { is_expected.to validate_length_of(:to_apply).is_at_most(500) }
 end
 
 describe Job, "all other attributes must be present" do
-  it { should validate_presence_of(:category) }
-  it { should validate_presence_of(:location) }
+  it { is_expected.to validate_presence_of(:category) }
+  it { is_expected.to validate_presence_of(:location) }
 end
