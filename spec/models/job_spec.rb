@@ -25,4 +25,7 @@ end
 describe Job, "all other attributes must be present" do
   it { is_expected.to validate_presence_of(:category) }
   it { is_expected.to validate_presence_of(:location) }
+  it { is_expected.to validate_presence_of(:company_name) }
+  it { is_expected.to validate_presence_of(:email) }
+  it { is_expected.to validate_presence_of(:website) }
 end

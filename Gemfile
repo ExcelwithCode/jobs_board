@@ -25,6 +25,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem "validates_formatting_of"
 
 group :development do
   gem "spring"
@@ -40,7 +41,7 @@ group :development, :test do
   gem "faker"
   gem "factory_girl_rails"
   gem "pry-rails"
-  gem "rspec-rails", "~> 3.1.0"
+  gem "rspec-rails", "~> 3.3.0"
 end
 
 group :test do
