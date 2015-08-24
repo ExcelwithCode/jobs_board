@@ -12,5 +12,4 @@
 /public/assets
 /tags
 /tmp/*
-/.env.development
-/.env.production
+
