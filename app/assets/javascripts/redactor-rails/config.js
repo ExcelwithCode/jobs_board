@@ -19,5 +19,4 @@ window.init_redactor = function(){
         "minHeight": 350
       });
 }
-
-$(document).on( 'ready page:load', window.init_redactor );
+// $(document).on( 'ready page:load', window.init_redactor );
