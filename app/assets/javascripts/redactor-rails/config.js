@@ -17,7 +17,7 @@ window.init_redactor = function(){
         "fileGetJson":"/redactor_rails/documents",
         "path":"/assets/redactor-rails",
         "css":"style.css",
-        "minHeight": 350
+        "minHeight": 350,
       });
-}
+};
 $(document).on( 'ready page:load', window.init_redactor );
