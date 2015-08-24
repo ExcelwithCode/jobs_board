@@ -3,9 +3,9 @@ require "rails_helper"
 
 feature "view all job listings" do
   before do
-    @job_1 = FactoryGirl.create(:job, title: "Senior Copywriter")
-    @job_2 = FactoryGirl.create(:job, title: "UX Designer")
-    @job_3 = FactoryGirl.create(:job, title: "Data Scientist")
+    @job_1 = FactoryGirl.create(:job, title: "Senior Copywriter", stripeEmail: "payment@jobs.com", payola_sale_guid: "mumbojumbo")
+    @job_2 = FactoryGirl.create(:job, title: "UX Designer", stripeEmail: "payment@jobs.com", payola_sale_guid: "mumbojumbo")
+    @job_3 = FactoryGirl.create(:job, title: "Data Scientist", stripeEmail: "payment@jobs.com", payola_sale_guid: "mumbojumbo")
   end
   
   scenario "user visits jobs page" do

@@ -11,6 +11,10 @@ class Job < ActiveRecord::Base
   
   before_validation :provide_name, :provide_permalink
   
+  def self.paid_ad
+    where.not("stripeEmail" => nil).where.not("payola_sale_guid" => nil).where("created_at > ?", 60.days.ago)
+  end
+  
   def paid?
     (!(self.stripeEmail == nil) && !(self.payola_sale_guid == nil))
   end
