@@ -6,7 +6,7 @@ window.init_redactor = function(){
       params = csrf_param + "=" + encodeURIComponent(csrf_token);
   }
   
-  $('.redactor').redactor({
+  $('#job_description').redactor({
         // You can specify, which ones plugins you need.
         // If you want to use plugins, you have add plugins to your
         // application.js and application.css files and uncomment the line below:
@@ -17,7 +17,7 @@ window.init_redactor = function(){
         "fileGetJson":"/redactor_rails/documents",
         "path":"/assets/redactor-rails",
         "css":"style.css",
-        "minHeight": 350,
+        "minHeight": 350
       });
 };
 $(document).on( 'ready page:load', window.init_redactor );
