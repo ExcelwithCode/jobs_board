@@ -6,7 +6,7 @@
 <%= simple_form_for(@job) do |f| %><br>
   <%= f.input :title, label: "What's the job title?", placeholder: "Freelance Technical Writer", autofocus: true %><br>
   <%= f.input :category, label: "Choose the best category.", collection: ["Product Design", "Product Development", "Digital Marketing", "Technical Writing", "Customer Success/Support", "Miscellaneous"] %><br>
-  <%= f.input :description, label: "Describe the responsibilities and requirements for this job.", input_html: { class: "redactor" } %><br>
+  <%= f.input :description, label: "Describe the responsibilities and requirements for this job." %><br>
   <%= f.input :to_apply, label: "How do people apply for this job?", placeholder: "Example: Send a resume and cover letter to jobs@company.com. You can use html link, bold, and italics tags.", input_html: { rows: 5 } %><br>
   <%= f.input :company_name, label: "What's the name of your company?" %><br>
   <%= f.input :location, label: "Where's your company's headquarters?", placeholder: "New York, NY or Boston, MA" %><br>
