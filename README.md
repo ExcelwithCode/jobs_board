@@ -1,4 +1,4 @@
-# Mockapp
+# Jobs Board
 
 ## Getting Started
 
